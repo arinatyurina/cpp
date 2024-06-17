@@ -21,6 +21,7 @@ Finally, public members are accessible from anywhere where the object is visible
 # define HEADER_H
 
 #include <iostream>
+#include <string>
 //class, attributes and functions it contains
 /*classes allow us to group variables together into a type
 and also add functionality to those variables*/
@@ -28,48 +29,64 @@ and also add functionality to those variables*/
 class Contact
 {
 private:
-	int			id;
-	std::string	first_name;
-	std::string	first_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
+	std::string	First_name;
+	std::string	Last_name;
+	std::string	Nickname;
+	std::string	Phone_number;
+	std::string	Darkest_secret;
+
 public:
-	Contact(/* args */);
-	~Contact();
+//	Contact();
+//	~Contact();
+
+	int		id;
+	void	set_first_name(const std::string&);
+	void	set_last_name(const std::string&);
+	void	set_nickname(const std::string&);
+	void	set_phone_number(const std::string&);
+	void	set_darkest_secret(const std::string&);
+	void	print_contact(void);
 };
 
-Contact::Contact(/* args */)
-{
-}
+// Contact::Contact() : First_name(""), Last_name(""), Nickname(""), Phone_number(""), Darkest_secret("")
+// {
 
-Contact::~Contact()
-{
-}
+// }
 
-class PhoneBoook
+// Contact::~Contact()
+// {
+
+// }
+
+class PhoneBook
 {
 private:
-	/* data */
-	Contact	contact[8];
-	int		id;
-	int		amount;
+	Contact	Contacts[8];
+	int		Next;
+	int		Amount;
 public:
-	PhoneBoook(/* args */);
-	~PhoneBoook();
+	PhoneBook()
+	{
+		Next = 0;
+		Amount = 0;
+	}
+//	~PhoneBook();
 	
-	void	add(Contact Contact);
-	void	search(PhoneBoook PhoneBoook);
-	void	exit(void);
+	void	add(const Contact& contact);
+	void	search(void);
+	const Contact& getContact(int index) const;
 };
 
-//cpnstructors and destructors do not returt anything
-PhoneBoook::PhoneBoook(/* args */)
-{
-}
+//constructors and destructors do not return anything
+// PhoneBook::PhoneBook()
+// {
+// 	Next = 0;
+// 	Amount = 0;
+// }
 
-PhoneBoook::~PhoneBoook()
-{
-}
+// PhoneBook::~PhoneBook()
+// {
+
+// }
 
 #endif
