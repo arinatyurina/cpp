@@ -22,6 +22,7 @@ Finally, public members are accessible from anywhere where the object is visible
 
 #include <iostream>
 #include <string>
+#include <limits>
 //class, attributes and functions it contains
 /*classes allow us to group variables together into a type
 and also add functionality to those variables*/
@@ -38,7 +39,6 @@ private:
 public:
 //	Contact();
 //	~Contact();
-
 	int		id;
 	void	set_first_name(const std::string&);
 	void	set_last_name(const std::string&);
@@ -46,6 +46,7 @@ public:
 	void	set_phone_number(const std::string&);
 	void	set_darkest_secret(const std::string&);
 	void	print_contact(void);
+	void	print_contact_column(void);
 };
 
 // Contact::Contact() : First_name(""), Last_name(""), Nickname(""), Phone_number(""), Darkest_secret("")
@@ -74,6 +75,10 @@ public:
 	
 	void	add(const Contact& contact);
 	void	search(void);
+	int		getAmount(void);
+	int		getNext(void);
+	void	updateContactId(void);
+	int 	ContactIndexById(int id);
 	const Contact& getContact(int index) const;
 };
 
@@ -88,5 +93,7 @@ public:
 // {
 
 // }
+
+std::string format_text(const std::string &text);
 
 #endif
