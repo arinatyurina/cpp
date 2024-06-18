@@ -110,6 +110,9 @@ void	search_contact(PhoneBook &pb)
 	}
 }
 
+//ctrlD EOF cin.eof ???
+/// new prompt after SEARCH and ADD
+
 int main(void)
 {
 	PhoneBook	pb;
