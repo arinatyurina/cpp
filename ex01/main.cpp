@@ -18,6 +18,16 @@ void	exit_program(void)
 	exit (EXIT_SUCCESS);
 }
 
+bool all_spaces(const std::string& str)
+{
+	for (std::string::const_iterator i = str.begin(); i != str.end(); ++i) {
+		if (!std::isspace(*i)) {
+			return (false);
+		}
+	}
+	return (true);
+}
+
 std::string	get_input_and_check(void)
 {
 	std::string	input;
@@ -25,7 +35,8 @@ std::string	get_input_and_check(void)
 	std::getline(std::cin, input);
 	if (std::cin.eof())
 		exit_program();
-	if (input.empty() || std::all_of(input.begin(),input.end(),isspace))
+	
+	if (input.empty() || all_spaces(input))
 	{
 		std::cout << ">> Please, try again. You can not leave fields empty" << std::endl;
 		input = get_input_and_check();
@@ -101,7 +112,10 @@ void	search_contact(PhoneBook &pb)
 	}
 	while (1)
 	{
-		std::cout << "Please, input the index to display a specific contact (0-" << std::to_string(pb.getAmount() - 1) << ")." << std::endl;
+		std::stringstream ss;
+		ss << (pb.getAmount() - 1);
+		std::string nbr = ss.str();
+		std::cout << "Please, input the index to display a specific contact (0-" << nbr << ")." << std::endl;
 		std::getline(std::cin, input);
 		if (input == "EXIT")
 			exit (EXIT_SUCCESS) ;
@@ -122,10 +136,20 @@ void	search_contact(PhoneBook &pb)
 					std::cout << "Contact not found."<< std::endl;
 			}
 			else
-				std::cout << "WRONG INPUT >> Index must be a number between 0 and " << std::to_string(pb.getAmount() - 1) << '.' << std::endl;
+			{
+				std::stringstream ss;
+				ss << (pb.getAmount() - 1);
+				std::string nbr = ss.str();
+				std::cout << "WRONG INPUT >> Index must be a number between 0 and " << nbr << '.' << std::endl;
+			}
 		}
 		else
-			std::cout << "WRONG INPUT >> Index must be a number between 0 and " << std::to_string(pb.getAmount() - 1) << '.' << std::endl;
+		{
+			std::stringstream ss;
+			ss << (pb.getAmount() - 1);
+			std::string nbr = ss.str();
+			std::cout << "WRONG INPUT >> Index must be a number between 0 and " << nbr << '.' << std::endl;
+		}
 	}
 }
 

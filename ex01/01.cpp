@@ -77,7 +77,10 @@ void	Contact::print_contact(void)
 
 void	Contact::print_contact_column(void)
 {
-	std::cout << '|' << format_text(std::to_string(id)) \
+	std::stringstream ss;
+	ss << id;
+	std::string nbr = ss.str();
+	std::cout << '|' << format_text(nbr) \
 	<< '|' << format_text(First_name) \
 	<< '|' << format_text(Last_name) \
 	<< '|' << format_text(Nickname) \

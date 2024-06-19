@@ -23,6 +23,7 @@ Finally, public members are accessible from anywhere where the object is visible
 #include <iostream>
 #include <string>
 #include <limits>
+#include <sstream>
 #include <algorithm> // для std::all_of
 #include <cctype> // для std::isdigit и std::isspace
 //class, attributes and functions it contains
