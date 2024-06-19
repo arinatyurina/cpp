@@ -18,6 +18,21 @@ void	exit_program(void)
 	exit (EXIT_SUCCESS);
 }
 
+std::string	get_input_and_check(void)
+{
+	std::string	input;
+
+	std::getline(std::cin, input);
+	if (std::cin.eof())
+		exit_program();
+	if (input.empty() || std::all_of(input.begin(),input.end(),isspace))
+	{
+		std::cout << ">> Please, try again. You can not leave fields empty" << std::endl;
+		input = get_input_and_check();
+	}
+	return (input);
+}
+
 void	add_contact(PhoneBook &pb)
 {
 	Contact		new_contact;
@@ -25,20 +40,24 @@ void	add_contact(PhoneBook &pb)
 
 	std::cout << "Input the information of the new contact" << std::endl;
 	std::cout << ">> Please, input first name" << std::endl;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-	std::getline(std::cin, input);
+	input = get_input_and_check();
 	new_contact.set_first_name(input);
 	std::cout << ">> Please, input last name" << std::endl;
-	std::getline(std::cin, input);
+	input = get_input_and_check();
 	new_contact.set_last_name(input);
 	std::cout << ">> Please, input nickname" << std::endl;
-	std::getline(std::cin, input);
+	input = get_input_and_check();
 	new_contact.set_nickname(input);
 	std::cout << ">> Please, input phone number" << std::endl;
-	std::getline(std::cin, input);
+	input = get_input_and_check();
+ 	while (input.find_first_not_of("-+ 0123456789") != std::string::npos)
+	{
+		std::cout << ">> Please, try again. For phone number you can only use digits" << std::endl;
+		input = get_input_and_check();;
+	}
 	new_contact.set_phone_number(input);
 	std::cout << ">> Please, input darkest secret" << std::endl;
-	std::getline(std::cin, input);
+	input = get_input_and_check();
 	new_contact.set_darkest_secret(input);
 	int amount = pb.getAmount();
 	if (amount != 8)
@@ -83,7 +102,7 @@ void	search_contact(PhoneBook &pb)
 	while (1)
 	{
 		std::cout << "Please, input the index to display a specific contact (0-" << std::to_string(pb.getAmount() - 1) << ")." <<std::endl;
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (input == "EXIT")
 			exit (EXIT_SUCCESS) ;
 		if (input.length() == 1 && std::isdigit(input[0]))
@@ -110,9 +129,6 @@ void	search_contact(PhoneBook &pb)
 	}
 }
 
-//ctrlD EOF cin.eof ???
-/// new prompt after SEARCH and ADD
-
 int main(void)
 {
 	PhoneBook	pb;
@@ -122,7 +138,9 @@ int main(void)
 	std::cout << "On program start-up, the phonebook is empty.\n>> The program only accepts ADD, SEARCH and EXIT." << std::endl;
 	while (1)
 	{
-		std::cin >> input;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+			exit_program();
 		if (input == "ADD")
 			add_contact(pb);
 		else if (input == "SEARCH")
@@ -131,5 +149,6 @@ int main(void)
 			exit_program();
 		else
 			std::cout << ">> The program only accepts ADD, SEARCH and EXIT.\nAny other input is discarded." << std::endl;
+		std::cout << ">> The program only accepts ADD, SEARCH and EXIT." << std::endl;
 	}
 }

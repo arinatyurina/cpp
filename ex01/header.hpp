@@ -23,6 +23,8 @@ Finally, public members are accessible from anywhere where the object is visible
 #include <iostream>
 #include <string>
 #include <limits>
+#include <algorithm> // для std::all_of
+#include <cctype> // для std::isdigit и std::isspace
 //class, attributes and functions it contains
 /*classes allow us to group variables together into a type
 and also add functionality to those variables*/
