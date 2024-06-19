@@ -16,7 +16,7 @@ SRC := main.cpp 01.cpp \
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 

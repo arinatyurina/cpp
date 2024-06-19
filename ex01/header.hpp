@@ -76,7 +76,6 @@ public:
 //	~PhoneBook();
 	
 	void	add(const Contact& contact);
-	void	search(void);
 	int		getAmount(void);
 	int		getNext(void);
 	void	updateContactId(void);

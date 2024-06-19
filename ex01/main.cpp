@@ -101,7 +101,7 @@ void	search_contact(PhoneBook &pb)
 	}
 	while (1)
 	{
-		std::cout << "Please, input the index to display a specific contact (0-" << std::to_string(pb.getAmount() - 1) << ")." <<std::endl;
+		std::cout << "Please, input the index to display a specific contact (0-" << std::to_string(pb.getAmount() - 1) << ")." << std::endl;
 		std::getline(std::cin, input);
 		if (input == "EXIT")
 			exit (EXIT_SUCCESS) ;
@@ -122,10 +122,10 @@ void	search_contact(PhoneBook &pb)
 					std::cout << "Contact not found."<< std::endl;
 			}
 			else
-				std::cout << "WRONG INPUT >> Index must be a number between 0 and " << std::to_string(pb.getAmount() - 1) << '.' <<std::endl;
+				std::cout << "WRONG INPUT >> Index must be a number between 0 and " << std::to_string(pb.getAmount() - 1) << '.' << std::endl;
 		}
 		else
-			std::cout << "WRONG INPUT >> Index must be a number between 0 and " << std::to_string(pb.getAmount() - 1) << '.' <<std::endl;
+			std::cout << "WRONG INPUT >> Index must be a number between 0 and " << std::to_string(pb.getAmount() - 1) << '.' << std::endl;
 	}
 }
 

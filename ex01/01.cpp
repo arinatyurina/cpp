@@ -57,11 +57,6 @@ void	PhoneBook::add(const Contact& contact)
 	Next = (Next + 1) % 8;
 }
 
-void	PhoneBook::search(void)
-{
-
-}
-
 std::string format_text(const std::string &text)
 {
 	unsigned long width = 10;

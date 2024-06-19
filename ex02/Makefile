@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: atyurina <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/06/05 12:55:14 by atyurina          #+#    #+#              #
-#    Updated: 2024/06/05 12:55:16 by atyurina         ###   ########.fr        #
+#    Created: 2024/06/19 14:26:30 by atyurina          #+#    #+#              #
+#    Updated: 2024/06/19 14:26:31 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := megaphone
-SRC := megaphone.cpp
+NAME := logs
+SRC := Account.cpp tests.cpp\
 
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 all: $(NAME)
 
@@ -36,3 +36,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
