@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME := phone_book
-SRC := main.cpp 01.cpp \
+SRC := main.cpp 01.cpp main_functions.cpp additional_functions.cpp\
 
 OBJ := $(SRC:.cpp=.o)
 

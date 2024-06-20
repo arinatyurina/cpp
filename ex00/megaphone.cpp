@@ -16,7 +16,7 @@ insert a sequence of characters into the standard output
 stream (which usually is the screen)
 
 cout is declared in the iostream standard file
-within the std namespace
+within the std
 */
 
 #include <iostream>

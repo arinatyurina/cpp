@@ -24,6 +24,7 @@ Finally, public members are accessible from anywhere where the object is visible
 #include <string>
 #include <limits>
 #include <sstream>
+#include <iomanip>
 #include <algorithm> // для std::all_of
 #include <cctype> // для std::isdigit и std::isspace
 //class, attributes and functions it contains
@@ -38,11 +39,9 @@ private:
 	std::string	Nickname;
 	std::string	Phone_number;
 	std::string	Darkest_secret;
+	int		id;
 
 public:
-//	Contact();
-//	~Contact();
-	int		id;
 	void	set_first_name(const std::string&);
 	void	set_last_name(const std::string&);
 	void	set_nickname(const std::string&);
@@ -50,17 +49,9 @@ public:
 	void	set_darkest_secret(const std::string&);
 	void	print_contact(void);
 	void	print_contact_column(void);
+	int		get_contact_id(void);
+	void	update_contact_id(int);
 };
-
-// Contact::Contact() : First_name(""), Last_name(""), Nickname(""), Phone_number(""), Darkest_secret("")
-// {
-
-// }
-
-// Contact::~Contact()
-// {
-
-// }
 
 class PhoneBook
 {
@@ -84,18 +75,15 @@ public:
 	const Contact& getContact(int index) const;
 };
 
-//constructors and destructors do not return anything
-// PhoneBook::PhoneBook()
-// {
-// 	Next = 0;
-// 	Amount = 0;
-// }
+//main_funstions:
+void		exit_program(void);
+void		add_contact(PhoneBook &pb);
+void		display_contactlist(PhoneBook pb);
+void		search_contact(PhoneBook &pb);
 
-// PhoneBook::~PhoneBook()
-// {
-
-// }
-
-std::string format_text(const std::string &text);
+//additional_functions:
+bool		all_spaces(const std::string& str);
+std::string	get_input_and_check(void);
+std::string	format_text(const std::string &text);
 
 #endif

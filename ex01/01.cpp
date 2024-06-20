@@ -24,7 +24,11 @@ int		PhoneBook::getAmount(void)
 void	PhoneBook::updateContactId(void)
 {
 	for (int i = 7; i >= 0; i--)
-		Contacts[i].id -= 1;
+	{
+		int old_id;
+		old_id = Contacts[i].get_contact_id();
+		Contacts[i].update_contact_id(old_id - 1);
+	}
 }
 
 int		PhoneBook::getNext(void)
@@ -36,12 +40,13 @@ int PhoneBook::ContactIndexById(int id)
 {
 	int	amount = Amount;
 	int index = 0;
-
+	int	c_id;
 	if (amount == 0)
 		return (-1);
 	while (amount > 0)
 	{
-		if (Contacts[index].id == id)
+		c_id = Contacts[index].get_contact_id();
+		if (c_id == id)
 			return (index);
 		index = (index + 1) % 8;
 		amount--;
@@ -55,15 +60,6 @@ void	PhoneBook::add(const Contact& contact)
 		Amount++;
 	Contacts[Next] = contact;
 	Next = (Next + 1) % 8;
-}
-
-std::string format_text(const std::string &text)
-{
-	unsigned long width = 10;
-	if (text.length() > width)
-		return text.substr(0, width - 1) + ".";
-	else 
-		return std::string(width - text.length(), ' ') + text;
 }
 
 void	Contact::print_contact(void)
@@ -109,4 +105,14 @@ void	Contact::set_phone_number(const std::string&phone)
 void	Contact::set_darkest_secret(const std::string&secret)
 {
 	Darkest_secret = secret;
+}
+
+int		Contact::get_contact_id(void)
+{
+	return(id);
+}
+
+void	Contact::update_contact_id(int new_id)
+{
+	id = new_id;
 }
