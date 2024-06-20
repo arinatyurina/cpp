@@ -90,7 +90,7 @@ void	search_contact(PhoneBook &pb)
 		ss << (pb.getAmount() - 1);
 		std::string nbr = ss.str();
 		std::cout << "Please, input the index to display a specific contact (0-" << nbr << ")." << std::endl;
-		std::getline(std::cin, input);
+		input = get_input_and_check();
 		if (input == "EXIT")
 			exit (EXIT_SUCCESS) ;
 		if (input.length() == 1 && std::isdigit(input[0]))
