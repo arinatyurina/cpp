@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 14:09:06 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/24 11:59:00 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:16:27 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	~Zombie();
 
 	void	announce(void);
-	void	setName(std::string);
+	void	setName(std::string str);
 };
 
 Zombie* zombieHorde( int N, std::string name );
