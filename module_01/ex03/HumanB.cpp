@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 12:28:05 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/25 12:55:44 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/25 13:05:38 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ it keeps a reference (through a pointer) to the original Weapon object,
 which continues to exist as long as it is needed.*/
 void	HumanB::setWeapon(Weapon &type)
 {
-	this->weapon = &type;
+	weapon = &type;
 }
 
 void	HumanB::attack(void) const
