@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:53:52 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/24 14:32:50 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/25 12:26:00 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 public:
 	Weapon(std::string type);
 	//~Weapon();
-	std::string const getType(void);
+	const std::string & getType(void);
 	void	setType(std:: string type);
 };
 

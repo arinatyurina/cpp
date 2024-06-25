@@ -6,13 +6,13 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:53:55 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/24 14:32:17 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/25 12:27:21 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-std::string const  Weapon::getType(void)
+std::string const&  Weapon::getType(void)
 {
 	return (this->type);
 }

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:32:30 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/24 14:47:45 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/25 12:46:30 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 	Weapon&	weapon;
 public:
 	HumanA(std::string name, Weapon& weapon);
-	void	attack();
+	void	attack() const;
 };
 
 #endif
