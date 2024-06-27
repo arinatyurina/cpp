@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:45:56 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/27 15:57:49 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/27 22:34:34 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ std::string modify_text(std::ifstream& ifs, const std::string& s1, const std::st
 
     while (std::getline(ifs, line))
         text += line + "\n";
+	if (text == "")
+	{
+		std::cout << "Infile is empty" << std::endl;
+		exit (EXIT_FAILURE);
+	}
     size_t index = text.find(s1);
     if (index == std::string::npos)
         return text;
@@ -41,14 +46,14 @@ std::string modify_text(std::ifstream& ifs, const std::string& s1, const std::st
 
 int	out_file(std::ifstream &ifs, std:: string filename, std::string s1, std::string s2)
 {
+	std::string	str;
+	str = modify_text(ifs, s1, s2);
 	std::ofstream	ofs((filename + ".replace").c_str());
 	if (!ofs.is_open())
 	{
 		std::cerr << "Error while creating the outfile" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	std::string	str;
-	str = modify_text(ifs, s1, s2);
 	ofs << str;
 	ifs.close();
 	ofs.close();
@@ -71,7 +76,7 @@ int main(int argc, char** argv)
 	std::ifstream	ifs(infile.c_str());
 	if (!ifs.is_open())
 	{
-		std::cerr << "Error while opening the infile" << std::endl;
+		std::cerr << "File does not exist or permission denied" << std::endl;
 		return (EXIT_FAILURE);
 	}
 	int ret = out_file(ifs, infile, s1, s2);
