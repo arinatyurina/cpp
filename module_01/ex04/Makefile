@@ -6,7 +6,7 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/25 13:45:41 by atyurina          #+#    #+#              #
-#    Updated: 2024/06/25 13:45:53 by atyurina         ###   ########.fr        #
+#    Updated: 2024/06/27 20:26:38 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC := main.cpp
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-fsanitize=address
 
 all: $(NAME)
 
