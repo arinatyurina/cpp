@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:45:56 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/27 22:34:34 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:32:14 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,27 @@
 
 std::string modify_text(std::ifstream& ifs, const std::string& s1, const std::string& s2)
 {
-    std::string text;
-    std::string line;
+	std::string text;
+	std::string line;
 
-    while (std::getline(ifs, line))
-        text += line + "\n";
+	while (std::getline(ifs, line))
+		text += line + "\n";
 	if (text == "")
 	{
 		std::cout << "Infile is empty" << std::endl;
 		exit (EXIT_FAILURE);
 	}
-    size_t index = text.find(s1);
-    if (index == std::string::npos)
-        return text;
-    int skip = 0;
-    while ((index = text.find(s1, skip)) != std::string::npos)
-    {
-        text.erase(index, s1.length());
-        text.insert(index, s2);
-        skip = index + s2.length();
-    }
-    return text;
+	size_t index = text.find(s1);
+	if (index == std::string::npos)
+		return text;
+	int skip = 0;
+	while ((index = text.find(s1, skip)) != std::string::npos)
+	{
+		text.erase(index, s1.length());
+		text.insert(index, s2);
+		skip = index + s2.length();
+	}
+	return text;
 }
 
 int	out_file(std::ifstream &ifs, std:: string filename, std::string s1, std::string s2)
