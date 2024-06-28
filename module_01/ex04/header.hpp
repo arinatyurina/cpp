@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:46:13 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/28 12:32:01 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/06/28 15:38:56 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <string>
 # include <iostream>
-# include<fstream> //file stream operations
+# include <fstream> //file stream operations
+# include <cstdlib>
 
 int	out_file(std::ifstream &ifs, std:: string filename, std::string s1, std::string s2);
 std::string	modify_text(std::ifstream& ifs, const std::string& s1, const std::string& s2);
