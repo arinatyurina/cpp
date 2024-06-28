@@ -6,11 +6,11 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/27 20:51:26 by atyurina          #+#    #+#              #
-#    Updated: 2024/06/28 00:11:25 by atyurina         ###   ########.fr        #
+#    Updated: 2024/06/28 13:57:43 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := this_is_harl
+NAME := harl
 SRC := main.cpp Harl.cpp
 
 OBJ := $(SRC:.cpp=.o)
