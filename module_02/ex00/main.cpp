@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 13:46:13 by atyurina          #+#    #+#             */
-/*   Updated: 2024/06/28 15:43:57 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/02 18:22:18 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/02 18:25:00 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-# define HEADER_HPP
+#include "Fixed.hpp"
 
-# include <string>
-# include <iostream>
-# include <fstream> //file stream operations
-# include <cstdlib>
-
-int	out_file(std::ifstream &ifs, std:: string filename, std::string s1, std::string s2);
-std::string	modify_text(std::ifstream& ifs, const std::string& s1, const std::string& s2);
-
-#endif
+int main( void )
+{
+	Fixed	a;
+	Fixed	b(a);
+	Fixed	c;
+	
+	c = b;
+	
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}
