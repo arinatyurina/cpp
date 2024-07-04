@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 18:23:56 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/04 20:02:21 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/04 20:14:32 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::~Fixed() //a destructor
 }
 
 
-Fixed::Fixed(const Fixed& other) : RawBits(other.RawBits)//a copy constructor (new instance is created)
+Fixed::Fixed(const Fixed& other) : RawBits(other.RawBits) //a copy constructor (new instance is created)
 {
 	std::cout << "Copy constructor called" << std::endl;
 //	this->RawBits = other.getRawBits();
@@ -82,4 +82,136 @@ void	Fixed::setRawBits( int const raw )
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	RawBits = raw;
+}
+
+
+/**
+ * Comparison operators
+*/
+
+bool	Fixed::operator>(const Fixed& other) const
+{
+	return (this->RawBits > other.getRawBits());
+}
+
+bool	Fixed::operator<(const Fixed& other) const
+{
+	return (this->RawBits < other.getRawBits());
+}
+
+bool	Fixed::operator>=(const Fixed& other) const
+{
+	return (this->RawBits >= other.getRawBits());
+}
+
+bool	Fixed::operator<=(const Fixed& other) const
+{
+	return (this->RawBits <= other.getRawBits());
+}
+
+bool	Fixed::operator==(const Fixed& other) const
+{
+	return (this->RawBits == other.getRawBits());
+}
+
+bool	Fixed::operator!=(const Fixed& other) const
+{
+	return (this->RawBits != other.getRawBits());	
+}
+
+/**
+ * Arithmetic operators
+*/
+
+Fixed	Fixed::operator+(const Fixed & other) const
+{
+	return (Fixed(this->toFloat() + other.toFloat()));
+}
+
+Fixed	Fixed::operator-(const Fixed & other) const
+{
+	return (Fixed(this->toFloat() - other.toFloat()));
+}
+
+Fixed	Fixed::operator*(const Fixed & other) const
+{
+	return (Fixed(this->toFloat() * other.toFloat()));
+}
+
+Fixed	Fixed::operator/(const Fixed & other) const
+{
+	return (Fixed(this->toFloat() / other.toFloat()));
+}
+
+/**
+ * Increment/decrement
+ * 'Post' means after - that is, 
+ * the increment is done after the variable is read. 
+ * 'Pre' means before - so the variable value 
+ * is incremented first, then used in the expression. 
+*/
+
+//pre-incremention
+Fixed&	Fixed::operator++(void)
+{
+	this->RawBits += 1;
+	return (*this);
+}
+
+//post-incremention
+Fixed	Fixed::operator++(int)
+{
+	Fixed	tmp(*this);
+	this->RawBits += 1;
+	return (tmp); 
+}
+
+//pre-decrement
+Fixed&	Fixed::operator--(void)
+{
+	this->RawBits -= 1;
+	return (*this);
+}
+
+//post-decrement
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp(*this);
+	this->RawBits -= 1;
+	return (tmp); 
+}
+
+//min/const min/max/const max
+
+Fixed&	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return (b);
+	else
+		return (a);
+}
+
+const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return (b);
+	else
+		return (a);
+}
+
+Fixed&	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
+
+const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
 }
