@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 15:14:20 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/16 12:05:16 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:25:53 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(): name("unknown")
 {
-	std::cout << "Default constructor has been called" << std::endl;
+	std::cout << "ClapTrap default constructor has been called" << std::endl;
 	health = 10;
 	energy = 10;
 	damage = 0;
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(): name("unknown")
 
 ClapTrap::ClapTrap(std::string name): name(name)
 {
-	std::cout << "Constructor with name " << name << " has been called" << std::endl;
+	std::cout << "ClapTrap constructor with name " << name << " has been called" << std::endl;
 	health = 10;
 	energy = 10;
 	damage = 0;
@@ -30,16 +30,18 @@ ClapTrap::ClapTrap(std::string name): name(name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor has been called" << std::endl;
+	std::cout << "ClapTrap destructor has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
+	std::cout << "ClapTrap copy constructor has been called" << std::endl;
 	*this = other;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 {
+	std::cout << "ClapTrap copy assignment operator has been called" << std::endl;
 	if (this != &other)
 	{
 		name = other.name;
@@ -53,16 +55,16 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 void	ClapTrap::attack(const std::string& target)
 {
 	if (health == 0)
-		std::cout << name << " is dead and can not attack anymore." << std::endl;
+		std::cout << name << " is dead and can not attack anymore (ClapTrap)." << std::endl;
 	else
 	{
 		if (energy > 0)
 		{
-			std::cout << name << " attacks " << target << ", causing " << damage << " points of damage!" << std::endl;
+			std::cout << name << " attacks " << target << ", causing " << damage << " points of damage (ClapTrap)!" << std::endl;
 			energy -= 1;
 		}
 		else
-			std::cout << name << " has no energy to attack." << std::endl;
+			std::cout << name << " has no energy to attack (ClapTrap)." << std::endl;
 	}
 }
 

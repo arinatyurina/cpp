@@ -6,29 +6,30 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 15:12:04 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/16 12:08:31 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/16 17:57:02 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	ClapTrap	mia("Mia");
-	ClapTrap	leo("Leo");
+//	ClapTrap	mil("Mil");
+// 	ScavTrap	frank("Frank");
+// //	ScavTrap	clone_frank(frank);
+// 	FragTrap	froggie("Froggie");
 
-	mia.setDamage(3);
-	//leo.getStatus();
-	//mia.getStatus();
-	mia.attack("Rik");
-	mia.beRepaired(1);
-	leo.takeDamage(3);
-	//mia.getStatus();
-	//leo.getStatus();
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(0);
-	//leo.getStatus();
+// 	frank.attack("Billie");
+// 	frank.takeDamage(1);
+// 	frank.beRepaired(1);
+// 	frank.guardGate();
+// 	froggie.highFivesGuys();
+
+	DiamondTrap	diana("Diana");
+
+	diana.whoAmI();
+//	mil.attack("Target");
+//	mil.beRepaired(1);
 }

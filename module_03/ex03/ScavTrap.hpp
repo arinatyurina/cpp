@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 15:12:04 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/16 12:08:31 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/16 12:11:26 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/16 16:15:32 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int	main(void)
+class ScavTrap : virtual public ClapTrap
 {
-	ClapTrap	mia("Mia");
-	ClapTrap	leo("Leo");
+public:
+	ScavTrap();
+	ScavTrap(const ScavTrap& other);
+	~ScavTrap();
 
-	mia.setDamage(3);
-	//leo.getStatus();
-	//mia.getStatus();
-	mia.attack("Rik");
-	mia.beRepaired(1);
-	leo.takeDamage(3);
-	//mia.getStatus();
-	//leo.getStatus();
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(0);
-	//leo.getStatus();
-}
+	ScavTrap(std::string name);
+	void	guardGate();
+	void attack(const std::string& target);
+};
+
+#endif

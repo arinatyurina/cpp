@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 15:12:04 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/16 12:08:31 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/16 15:38:16 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/16 16:15:38 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int	main(void)
+class FragTrap : virtual public ClapTrap
 {
-	ClapTrap	mia("Mia");
-	ClapTrap	leo("Leo");
+public:
+	FragTrap();
+	FragTrap(const FragTrap& other);
+	~FragTrap();
 
-	mia.setDamage(3);
-	//leo.getStatus();
-	//mia.getStatus();
-	mia.attack("Rik");
-	mia.beRepaired(1);
-	leo.takeDamage(3);
-	//mia.getStatus();
-	//leo.getStatus();
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(0);
-	//leo.getStatus();
-}
+	FragTrap(std::string name);
+	void highFivesGuys(void);
+};
+
+#endif
