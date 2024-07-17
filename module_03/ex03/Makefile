@@ -6,7 +6,7 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 15:12:01 by atyurina          #+#    #+#              #
-#    Updated: 2024/07/16 17:56:21 by atyurina         ###   ########.fr        #
+#    Updated: 2024/07/17 13:06:52 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC := main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-Wshadow -Wno-shadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g -Wshadow -Wno-shadow
 
 all: $(NAME)
 

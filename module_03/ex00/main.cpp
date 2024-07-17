@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 15:12:04 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/16 12:08:31 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/17 18:47:01 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,10 @@ int	main(void)
 	ClapTrap	leo("Leo");
 
 	mia.setDamage(3);
-	//leo.getStatus();
-	//mia.getStatus();
 	mia.attack("Rik");
+	mia.takeDamage(5);
 	mia.beRepaired(1);
 	leo.takeDamage(3);
-	//mia.getStatus();
-	//leo.getStatus();
 	leo.beRepaired(1);
 	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(1);
-	leo.beRepaired(0);
-	//leo.getStatus();
 }

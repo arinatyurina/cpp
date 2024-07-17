@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 12:11:26 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/16 16:15:32 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/17 13:20:56 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class ScavTrap : virtual public ClapTrap
 public:
 	ScavTrap();
 	ScavTrap(const ScavTrap& other);
+	ScavTrap& operator=(const ScavTrap& other);
 	~ScavTrap();
 
 	ScavTrap(std::string name);

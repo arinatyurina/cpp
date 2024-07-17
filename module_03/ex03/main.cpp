@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 15:12:04 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/16 17:57:02 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/17 18:16:25 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,15 @@
 
 int	main(void)
 {
-//	ClapTrap	mil("Mil");
-// 	ScavTrap	frank("Frank");
-// //	ScavTrap	clone_frank(frank);
-// 	FragTrap	froggie("Froggie");
-
-// 	frank.attack("Billie");
-// 	frank.takeDamage(1);
-// 	frank.beRepaired(1);
-// 	frank.guardGate();
-// 	froggie.highFivesGuys();
-
 	DiamondTrap	diana("Diana");
 
 	diana.whoAmI();
-//	mil.attack("Target");
-//	mil.beRepaired(1);
+	//diana.getStatus();
+	diana.attack("Mob");
+	diana.takeDamage(20);
+	//diana.getStatus();
+	diana.beRepaired(10);
+	//diana.getStatus();
+	diana.highFivesGuys();
+	diana.guardGate();
 }

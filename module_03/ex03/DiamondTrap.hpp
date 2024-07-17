@@ -15,10 +15,8 @@
  * In derived class inherits from borh class1 and class2 the constructor
  * to resolve it we will use parameterised constructor
  * 
- * normally the derived call the baseclass
+ * normally the derived call the base class
  * but in our case its gonna call commonbase of base1 and base2
- * 
- * почиатть еще про параметарайсд констрактор. и нужно ли мне это тут использовать
 */
 
 #ifndef DIAMONDTRAP_HPP
@@ -30,14 +28,14 @@
 class DiamondTrap : public FragTrap, public ScavTrap
 {
 private:
-	std::string	name;
+	std::string	diamondName;
 public:
 	DiamondTrap();
 	DiamondTrap(const DiamondTrap& other);
 	~DiamondTrap();
 
 	DiamondTrap(std::string name);
-	using ScavTrap::attack;
+	using ScavTrap::attack; //resolving ambiguity with 'using' (specifies that it should use the attack method from the ScavTrap class)
 
 	void	whoAmI();
 };
