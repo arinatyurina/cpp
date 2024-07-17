@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:55:30 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/17 17:49:21 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/17 21:00:47 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ DiamondTrap::DiamondTrap() : ClapTrap("unknown_clap_name"), FragTrap(), ScavTrap
 {
 	std::cout << "[DiamondTrap] default constructor has been called" << std::endl;
 	name = "unknown";
-	health = FragTrap::health;
-	energy = ScavTrap::energy;
-	damage = FragTrap::damage;
+	health = 100; // FragTrap::health;
+	energy = 50; //ScavTrap::energy;
+	damage = 30; //FragTrap::damage;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name), diamondName(name)
 {
 	std::cout << "[DiamondTrap] constructor with name " << name << " has been called" << std::endl;
 	ClapTrap::name = name + "_clap_name";
-	health = FragTrap::health;
-	energy = ScavTrap::energy;
-	damage = FragTrap::damage;
+	health = 100; // FragTrap::health;
+	energy = 50; //ScavTrap::energy;
+	damage = 30; //FragTrap::damage;
 }
 
 DiamondTrap::~DiamondTrap()
