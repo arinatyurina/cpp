@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/22 17:41:17 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 16:16:37 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/23 16:30:21 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/23 16:31:56 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "[Animal] Constructor called" << std::endl;
+	std::cout << "[WrongAnimal] Constructor called" << std::endl;
 	type = "Not assigned";
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "[Animal] Destructor called" << std::endl;
+	std::cout << "[WrongAnimal] Destructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& other)
+WrongAnimal::WrongAnimal(const WrongAnimal& other)
 {
 	*this = other;
 }
 
-Animal& Animal::operator=(const Animal& other)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
 {
 	if (this != &other)
 		type = other.type;
 	return (*this);
 }
 
-void	Animal::makeSound() const
+void	WrongAnimal::makeSound() const
 {
-	std::cout << "[Animal] makeSound function called" << std::endl;
+	std::cout << "[WrongAnimal] makeSound function called" << std::endl;
 }
 
-std::string	const& Animal::getType(void) const
+std::string	const& WrongAnimal::getType(void) const
 {
 	return (type);
 }

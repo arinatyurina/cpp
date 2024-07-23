@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/22 18:05:15 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 16:28:20 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/22 18:05:21 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/23 17:16:55 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #include <iostream>
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal
+class Dog : public Animal
 {
+private:
+	Brain	*brainDog;
 public:
-	Cat();
-	~Cat();
-	Cat(const Cat& other);
-	Cat& operator=(const Cat& other);
+	Dog();
+	~Dog();
+	Dog(const Dog& other);
+	Dog& operator=(const Dog& other);
 
 	void	makeSound(void) const;
 };

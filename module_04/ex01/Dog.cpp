@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/22 18:05:12 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 16:13:44 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/22 18:05:18 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/23 18:56:00 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat()
+Dog::Dog()
 {
-	std::cout << "[Cat] Constructor called" << std::endl;
-	type = "Cat";
+	std::cout << "[Dog] Constructor called" << std::endl;
+	type = "Dog";
+	brainDog = new Brain();
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << "[Cat] Destructor called" << std::endl;
+	delete brainDog;
+	std::cout << "[Dog] Destructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other)
+Dog::Dog(const Dog& other) : Animal(other)
 {
 	*this = other;
 }
 
-Cat& Cat::operator=(const Cat& other)
+Dog& Dog::operator=(const Dog& other)
 {
 	if (this != &other)
+	{
 		type = other.type;
+		*this->brainDog = *other.brainDog;
+		std::cout << brainDog << " vs " << other.brainDog << "\n\n";
+	}
 	return (*this);
 }
 
-void	Cat::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout << "[Car] Meow!" << std::endl;
+	std::cout << "[Dog] Bark!" << std::endl;
 }

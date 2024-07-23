@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/22 18:05:12 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 16:13:44 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/23 16:30:27 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/23 16:33:23 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	std::cout << "[Cat] Constructor called" << std::endl;
-	type = "Cat";
+	std::cout << "[WrongCat] Constructor called" << std::endl;
+	type = "WrongCat";
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "[Cat] Destructor called" << std::endl;
+	std::cout << "[WrongCat] Destructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
 	*this = other;
 }
 
-Cat& Cat::operator=(const Cat& other)
+WrongCat& WrongCat::operator=(const WrongCat& other)
 {
 	if (this != &other)
 		type = other.type;
 	return (*this);
 }
 
-void	Cat::makeSound() const
+void	WrongCat::makeSound() const
 {
 	std::cout << "[Car] Meow!" << std::endl;
 }

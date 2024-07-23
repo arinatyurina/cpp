@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:15 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 16:28:20 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:10:53 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 #include <iostream>
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
+private:
+	Brain	*brainCat;
 public:
 	Cat();
 	~Cat();

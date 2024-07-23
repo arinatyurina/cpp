@@ -6,18 +6,18 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/22 17:37:15 by atyurina          #+#    #+#              #
-#    Updated: 2024/07/23 16:34:00 by atyurina         ###   ########.fr        #
+#    Updated: 2024/07/23 17:14:10 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := animal
 SRC := main.cpp Animal.cpp Cat.cpp Dog.cpp \
-		WrongAnimal.cpp WrongCat.cpp
+		WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g -Wshadow -Wno-shadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-Wshadow -Wno-shadow
 
 all: $(NAME)
 
