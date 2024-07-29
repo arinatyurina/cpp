@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:18 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 18:56:00 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:53:17 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ Dog& Dog::operator=(const Dog& other)
 	if (this != &other)
 	{
 		type = other.type;
-		*this->brainDog = *other.brainDog;
-		std::cout << brainDog << " vs " << other.brainDog << "\n\n";
+		brainDog = new Brain(*other.brainDog);
+		std::cout << brainDog << " vs " << other.brainDog << "\n"; //prove that Dogs have different Brain addresses
 	}
+	std::cout << "[Dog] Copy assignment operator called" << std::endl;
 	return (*this);
 }
 

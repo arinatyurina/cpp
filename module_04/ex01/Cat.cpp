@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:12 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 18:52:59 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/29 16:54:33 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ Cat& Cat::operator=(const Cat& other)
 	if (this != &other)
 	{
 		type = other.type;
-		brainCat = other.brainCat;
+		brainCat = new Brain(*other.brainCat);
 	}
+	std::cout << "[Cat] Copy assignment operator called" << std::endl;
 	return (*this);
 }
 

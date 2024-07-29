@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:37:31 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 18:40:39 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/29 17:03:02 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,39 @@
 
 int main()
 {
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	// delete j;//should not create a leak
-	// delete i;
+	std::cout << "\n\nTest from the subject\n\n";
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;
 
+	std::cout << "\n\nTest for an array of Animal objects\nHalf Dog, half Cat\n\n";
 	Animal	*animals[4];
 	animals[0] = new Dog();
 	animals[1] = new Dog();
 	animals[2] = new Cat();
 	animals[3] = new Cat();
+	std::cout << "\n\nDelete directly dogs and cats as Animals:\n\n";
 	for (int i = 0; i != 4; i++)
 	{
 		delete	animals[i];
 	}
 
-
 	std::cout << "\n\nTest for deep copy\n\n";
+	std::cout << "\nConstructors\n";	
+	std::cout << "\n\nDog->>>>>\n\n";
 	Dog	basic;
 	Dog tmp = basic;
+
+	std::cout << "\n\nCat->>>>>\n\n";
+	Cat	og;
+	Cat copy = og;
+	std::cout << "\nDestructors\n";	
 	return 0;
 }
 
 /**
- * he copy a Cat or a Dog should be a deep copy.
+ * the copy a Cat or a Dog should be a deep copy.
 Test something like:
 Dog basic;
 {
@@ -50,6 +59,4 @@ the Brain will get deleted with tmp at the end of the scope.
 The copy constructor should do a deep copy too.
 That's why a clean implementation in orthodox canonical form will
 save you from hours of pain.
-
-
 */
