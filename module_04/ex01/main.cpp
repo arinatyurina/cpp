@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:37:31 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/29 17:03:02 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/07/29 17:34:49 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int main()
 
 /**
  * the copy a Cat or a Dog should be a deep copy.
-Test something like:
 Dog basic;
 {
 Dog tmp = basic;
