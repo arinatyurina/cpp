@@ -1,17 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 17:42:13 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/29 17:43:52 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/29 18:08:23 by atyurina          #+#    #+#             */
+/*   Updated: 2024/07/29 18:37:34 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(void)
-{
+#ifndef CURE_HPP
+#define CURE_HPP
 
-	return (0);
-}
+#include "AMateria.hpp"
+
+class Cure : public AMateria
+{
+private:
+	/* data */
+public:
+	Cure();
+	virtual ~Cure();
+	Cure(const Cure& other);
+	Cure& operator=(const Cure& other);
+
+	virtual void use(ICharacter& target);
+
+	Cure* clone() const;
+};
+
+#endif
