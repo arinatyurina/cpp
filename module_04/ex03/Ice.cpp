@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:08:27 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/29 18:49:50 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/14 15:01:13 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,17 @@ Ice& Ice::operator=(const Ice& other)
 
 void Ice::use(ICharacter& target)
 {
-	std::cout<< "[Ice] * shoots an ice bolt at" << <name> << " *\n";
+	std::cout<< "* shoots an ice bolt at " << target.getName() << " *\n";
 }
 
 
-///is it a way to create a clone? double check
+/**
+ * It creates a new instance of Ice and returns a pointer to it. 
+ * This ensures that when you call clone() on an Ice object,
+ * you get a new Ice object. 
+*/
 Ice* Ice::clone(void) const
 {
 	Ice *clone = new Ice;
-
 	return (clone);
 }

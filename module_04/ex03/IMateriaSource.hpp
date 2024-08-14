@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/29 18:08:23 by atyurina          #+#    #+#             */
-/*   Updated: 2024/08/14 14:41:08 by atyurina         ###   ########.fr       */
+/*   Created: 2024/07/30 12:37:13 by atyurina          #+#    #+#             */
+/*   Updated: 2024/08/14 16:22:00 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 
-class Cure : public AMateria
+class IMateriaSource
 {
-public:
-	Cure();
-	/*virtual*/ ~Cure();
-	Cure(const Cure& other);
-	Cure& operator=(const Cure& other);
-
-	void use(ICharacter& target);
-
-	Cure* clone() const;
+	public:
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif

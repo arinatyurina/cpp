@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 17:48:07 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/29 18:17:39 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/14 14:48:56 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 AMateria::AMateria()
 {
 	std::cout << "[AMateria] Default Constructor called" << std::endl;
+	type = "AMateria";
 }
 
 AMateria::~AMateria()
@@ -27,10 +28,11 @@ AMateria::AMateria(const AMateria& other)
 	*this = other;
 }
 
+
 AMateria& AMateria::operator=(const AMateria& other)
 {
 	if (this != &other)
-		type = other.type;
+		this->type = other.type;
 	return (*this);
 }
 
@@ -47,5 +49,5 @@ std::string const & AMateria::getType(void) const
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "[AMateria] use function called" << std::endl;
+	std::cout << "[AMateria] use function called at " << target.getName() << std::endl;
 }

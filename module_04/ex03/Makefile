@@ -6,12 +6,12 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 17:42:02 by atyurina          #+#    #+#              #
-#    Updated: 2024/07/29 17:42:10 by atyurina         ###   ########.fr        #
+#    Updated: 2024/08/14 14:48:04 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := exec
-SRC := main.cpp 
+SRC := AMateria.cpp  Character.cpp  Cure.cpp  Ice.cpp  main.cpp  MateriaSource.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

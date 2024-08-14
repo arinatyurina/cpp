@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 18:08:18 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/29 18:36:48 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/14 15:01:16 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,15 @@ Cure& Cure::operator=(const Cure& other)
 	if (this != &other)
 		type = other.type;
 	return (*this);
+}
+
+void Cure::use(ICharacter& target)
+{
+	std::cout<< "* heals " << target.getName() << "'s wounds *\n";
+}
+
+Cure* Cure::clone(void) const
+{
+	Cure *clone = new Cure;
+	return (clone);
 }
