@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:37:31 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/29 17:34:49 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/22 14:35:40 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int main()
 	std::cout << "\n\nCat->>>>>\n\n";
 	Cat	og;
 	Cat copy = og;
+	Cat aa (og);
+	Cat bb;
+	bb = og;
 	std::cout << "\nDestructors\n";	
 	return 0;
 }
