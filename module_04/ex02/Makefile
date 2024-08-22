@@ -6,7 +6,7 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/22 17:37:15 by atyurina          #+#    #+#              #
-#    Updated: 2024/07/29 17:27:36 by atyurina         ###   ########.fr        #
+#    Updated: 2024/08/22 15:20:51 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC := main.cpp Animal.cpp Cat.cpp Dog.cpp \
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g #-Wshadow -Wno-shadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g -Wshadow -Wno-shadow
 
 all: $(NAME)
 

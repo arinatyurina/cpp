@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 17:37:31 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/29 17:37:52 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/22 15:21:48 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main()
 {
-	// Animal a; // This will cause a compilation error because Animal is abstract
+	//Animal a; // This will cause a compilation error because Animal is abstract
 	// a.getType();
 	// a.makeSound();
 	Dog dog;
