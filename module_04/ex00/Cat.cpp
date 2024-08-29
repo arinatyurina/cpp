@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:05:12 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 16:13:44 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:52:41 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ Cat& Cat::operator=(const Cat& other)
 
 void	Cat::makeSound() const
 {
-	std::cout << "[Car] Meow!" << std::endl;
+	std::cout << "[Cat] Meow!" << std::endl;
 }

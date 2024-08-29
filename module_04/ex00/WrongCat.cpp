@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 16:30:27 by atyurina          #+#    #+#             */
-/*   Updated: 2024/07/23 16:33:23 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:52:53 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ WrongCat& WrongCat::operator=(const WrongCat& other)
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "[Car] Meow!" << std::endl;
+	std::cout << "[WrongCat] Meow!" << std::endl;
 }
