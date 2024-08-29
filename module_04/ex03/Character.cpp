@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:08:37 by atyurina          #+#    #+#             */
-/*   Updated: 2024/08/14 17:28:12 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/29 15:57:52 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ Character::~Character()
 {
 	std::cout << "[Character] Destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		delete inventory[i];
+	{
+		if (inventory[i] != NULL)
+			delete inventory[i];
+	}
 }
 
 Character::Character(const Character& other) : ICharacter(other)
@@ -40,8 +43,10 @@ Character::Character(const Character& other) : ICharacter(other)
 	name = other.name;
 	for (int i = 0; i < 4; i++)
 	{
-		if (inventory[i])
-		inventory[i] = other.inventory[i]->clone(); //deep copy
+		if (other.inventory[i] != NULL)
+			inventory[i] = other.inventory[i]->clone();
+		else
+			inventory[i] = NULL;
 	}
 	std::cout << "[Character] Copy constructor called" << std::endl;
 }
@@ -53,9 +58,12 @@ Character& Character::operator=(const Character& other)
 		name = other.name;
 		for (int i = 0; i < 4; i++)
 		{
-			if (inventory[i])
+			if (inventory[i] != NULL)
 				delete inventory[i];
-			inventory[i] = other.inventory[i]->clone();
+			if (other.inventory[i] != NULL)
+				inventory[i] = other.inventory[i]->clone();
+			else
+				inventory[i] = NULL;
 		}
 	}
 	std::cout << "[Character] Copy assignment operator called" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:26:06 by atyurina          #+#    #+#             */
-/*   Updated: 2024/08/14 17:17:25 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/15 12:24:45 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,8 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (materials[i] && materials[i]->getType() == type) {
+		if (materials[i] && materials[i]->getType() == type)
 			return materials[i]->clone();
-		}
 	}
 	return NULL;
 }
