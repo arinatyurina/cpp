@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:26:06 by atyurina          #+#    #+#             */
-/*   Updated: 2024/08/15 12:24:45 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:02:42 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ MateriaSource::~MateriaSource()
 {
 	std::cout << "[MateriaSource] Destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
-		delete materials[i];
+	{
+		if (materials[i])
+			delete materials[i];
+	}
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other)
@@ -64,7 +67,9 @@ void MateriaSource::learnMateria(AMateria* m)
 	if (i > 3)
 		std::cout << "MateriaSource can know at most 4 Materias! Can not learn any more" << std::endl;
 	else
+	{
 		materials[i] = m;
+	}
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
@@ -74,5 +79,6 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 		if (materials[i] && materials[i]->getType() == type)
 			return materials[i]->clone();
 	}
+	std::cout << "MateriaSource doen't know type " << type << "!\n"; 
 	return NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 17:42:13 by atyurina          #+#    #+#             */
-/*   Updated: 2024/08/29 16:09:27 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:37:11 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
 
-////deep copy with clone for character??
-
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
