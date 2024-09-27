@@ -3,7 +3,6 @@
 Welcome to the C++ Modules repository! This collection of projects is part of my learning journey in mastering C++ programming. Each module focuses on different aspects of C++ to build a strong foundation in object-oriented programming, data structures, algorithms, and more.
 
 ## Table of Contents
-/Currently on module_04/
 1. [Module 00 - Basics of C++](#module-00---basics-of-c++)
 2. [Module 01 - Memory Allocation](#module-01---memory-allocation)
 3. [Module 02 - Ad-hoc Polymorphism, Operators Overload](#module-02---ad-hoc-polymorphism-operators-overload)
@@ -39,8 +38,7 @@ This module covers operator overloading and polymorphism:
 - Function overloading
 - Operator overloading
 
-### Key Projects
-- **Complex Numbers**: Implementing arithmetic operations for complex numbers using operator overloading.
+**Complex Numbers**: Implementing arithmetic operations for complex numbers using operator overloading.
 
 ---
 
@@ -50,9 +48,16 @@ Learnt about inheritance in C++:
 - Constructors and destructors in inheritance
 - Virtual inheritance
 
-### Key Projects
-- **ClapTrap**: Building a robot class with inherited features.
-- **DiamondTrap**: Combining multiple inheritance and resolving ambiguities.
+**ClapTrap**: Building a robot class with inherited features.  
+**DiamondTrap**: Combining multiple inheritance and resolving ambiguities.
 
 ---
 
+## Module 04 - Abstract Classes
+This module dives into the concept of abstract classes and interfaces in C++:
+
+- Abstract Classes: Understanding the definition and purpose of abstract classes, which cannot be instantiated and may contain pure virtual functions.
+- Interfaces: Exploring how abstract classes can be used as interfaces to define a contract for derived classes.
+- Polymorphism: Utilizing polymorphism to allow for flexible and interchangeable class designs.
+
+---
