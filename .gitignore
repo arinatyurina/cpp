@@ -16,3 +16,5 @@ logs
 
 # Environment files
 .env
+
+.DS_Store
