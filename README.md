@@ -61,3 +61,12 @@ This module dives into the concept of abstract classes and interfaces in C++:
 - Polymorphism: Utilizing polymorphism to allow for flexible and interchangeable class designs.
 
 ---
+
+## Module 05 - Repetition and Exceptions
+I've learnt how to manage errors effectively using exceptions:
+
+- Exception handling: how to use try, catch, and throw to handle errors gracefully in programs.
+- Custom exceptions: created custom exceptions to handle specific error scenarios in a more descriptive way, extending the std::exception class.
+
+---
+
