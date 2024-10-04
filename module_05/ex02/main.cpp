@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:07:27 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/01 18:18:41 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:08:36 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,22 @@ int	main()
 {
 	try
 	{
-			Bureaucrat	Mary("Mary", 30);
-		ShrubberyCreationForm	shrub("meow");
-		Form	buy("buy", 25, 15);
-		/*Instatiation with an invalide grade*/
-		//Form	play("play", 255, 241);
-		Mary.signForm(rent);
-		Mary.signForm(buy);
+		Bureaucrat	Mary("Mary", 30);
+		Bureaucrat	James("James", 40);
+		ShrubberyCreationForm	shrub("target1");
+		RobotomyRequestForm	rob("target2");
+		PresidentalPardonForm	pres("target3");
+
+		Mary.signForm(shrub);
+		Mary.signForm(rob);
+		James.signForm(pres);
+		Mary.executeForm(shrub);
+		Mary.executeForm(rob);
+		James.executeForm(pres);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Exception: "<< e.what() << '\n';
 	}
 }
 

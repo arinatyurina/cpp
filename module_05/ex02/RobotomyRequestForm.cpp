@@ -6,14 +6,14 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 18:02:43 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/01 18:16:00 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:55:27 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <fstream>
 
-RobotomyRequestForm::RobotomyRequestForm(std::string &target) : Form("RobotomyRequestForm", 72, 45), target(target) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45), target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
 {
@@ -28,7 +28,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 
 void	RobotomyRequestForm::execute(Bureaucrat const &b) const
 {
-	if (!isSigned)
+	if (!isSigned())
 		throw RobotomyRequestForm::FormIsUnsigned();
 	else if (b.getGrade() > getExecGrade())
 	{

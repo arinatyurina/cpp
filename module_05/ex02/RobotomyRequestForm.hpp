@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:56:45 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/01 18:16:04 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:54:43 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ private:
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
 public:
 	virtual ~RobotomyRequestForm(){};
-	RobotomyRequestForm(std::string &target);
-	void	execute(Bureaucrat const &b) const override;
+	RobotomyRequestForm(std::string target);
+	void	execute(Bureaucrat const &b) const;
 };
 
 #endif

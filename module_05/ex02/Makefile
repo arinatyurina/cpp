@@ -6,12 +6,12 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/29 17:42:02 by atyurina          #+#    #+#              #
-#    Updated: 2024/10/01 18:16:47 by atyurina         ###   ########.fr        #
+#    Updated: 2024/10/04 15:55:01 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := built
-SRC := main.cpp Bureaucrat.cpp Form.cpp PresidentalPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC := main.cpp Bureaucrat.cpp AForm.cpp PresidentalPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

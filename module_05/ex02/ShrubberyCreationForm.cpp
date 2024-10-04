@@ -6,14 +6,14 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:33:17 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/01 17:56:57 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/04 15:56:04 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target) : Form("ShrubberyCreationForm", 145, 137), target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137), target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
 {
@@ -28,7 +28,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &b) const
 {
-	if (!isSigned)
+	if (!isSigned())
 		throw ShrubberyCreationForm::FormIsUnsigned();
 	else if (b.getGrade() > getExecGrade())
 		throw ShrubberyCreationForm::GradeTooLowException();
@@ -41,17 +41,17 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &b) const
 			return ;
 		}
 		ofs << "   *    *  ()   *   *" << std::endl;
-		ofs << "*        * /\         *" << std::endl;
+		ofs << "*        * /         *" << std::endl;
 		ofs << "      *   /i\\    *  *" << std::endl;
 		ofs << "    *     o/\\  *      *" << std::endl;
-		ofs << " *       ///\i\    *" << std::endl;
+		ofs << " *       ///    *" << std::endl;
 		ofs << "     *   /*/o\\  *    *" << std::endl;
-		ofs << "   *    /i//\*\      *" << std::endl;
-		ofs << "        /o/*\\i\   *" << std::endl;
+		ofs << "   *    /i//      *" << std::endl;
+		ofs << "        /o/*\\i   *" << std::endl;
 		ofs << "  *    //i//o\\\\     *" << std::endl;
-		ofs << "    * /*////\\\\i\*" << std::endl;
-		ofs << " *    //o//i\\*\\\   *" << std::endl;
-		ofs << "   * /i///*/\\\\\o\   *" << std::endl;
+		ofs << "    * /*////\\\\i" << std::endl;
+		ofs << " *    //o//i\\*\\   *" << std::endl;
+		ofs << "   * /i///*/\\\\   *" << std::endl;
 		ofs << "  *    *   ||     *" << std::endl;
 		ofs.close();
 		std::cout << "File " << target << "_shrubbery is created with ASCII tree inside" << std::endl;
