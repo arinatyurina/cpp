@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 22:39:47 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/08 23:48:27 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/09 23:04:10 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@ bool	isFloat(std::string s)
 	return (false);
 }
 
+bool	isInt(std::string s)
+{
+	char *end;
+	std::strtol(s.c_str(), &end, 10);
+	if (*end == '\0')
+		return (true);
+	return (false);
+}
 bool isSpecialLiteral(std::string s)
 {
 	return (s == "nan" || s == "nanf" || s == "+inf" || s == "-inf" ||
@@ -80,10 +88,10 @@ void	ScalarConverter::convert(std::string s)
 		return;
 	}
 
-	int len = s.size();
 	/*if char literal*/
 	if (s.length() == 1 && std::isprint(s[0]) && !std::isdigit(s[0]))
 	{
+		std::cout << "char literal" << std::endl;
 		std::cout << "[char] '" << s[0] << "'" << std::endl;
 		std::cout << "[int] " << static_cast<int>(s[0]) << std::endl;
 		std::cout << "[float] " << std::fixed << std::setprecision(1) << static_cast<float>(s[0]) << "f" << std::endl;
@@ -92,30 +100,64 @@ void	ScalarConverter::convert(std::string s)
 	}
 
 	/*if int*/
-	if (num != 0 || (len == 1 && s[0] == '0'))
+	char* end;
+	if (isInt(s))
+	{
+		std::cout << "int literal" << std::endl;
+		int num =  static_cast<int>(std::atol(s.c_str()));
+		if (num >= CHAR_MIN && num <= CHAR_MAX && std::isprint(static_cast<char>(num)))
+				std::cout << "[char] '" << static_cast<char>(num) << "'" << std::endl;
+		else
+				std::cout << "[char] is not displayable" << std::endl;
 		std::cout << "[int] " << num << std::endl;
-	else
-		std::cout << "[int] is not displayable" << std::endl;
+		std::cout << "[float] " << std::fixed << std::setprecision(1) << static_cast<float>(num) << "f" << std::endl;
+		std::cout << "[double] " << static_cast<double>(num) << std::endl;
+		return;
+	}
 
-	/*float*/
+	/*if float*/
 	std::cout << std::fixed << std::setprecision(1); /*float to 1 decimal place*/
 	if (isFloat(s))
 	{
+		std::cout << "float literal" << std::endl;
+		int num =  static_cast<int>(std::atol(s.c_str()));
 		float	f = static_cast <float> (atof(s.c_str()));
+				if (num >= CHAR_MIN && num <= CHAR_MAX && std::isprint(static_cast<char>(num)))
+				std::cout << "[char] '" << static_cast<char>(num) << "'" << std::endl;
+		else
+				std::cout << "[char] is not displayable" << std::endl;
+		if (f >= INT_MIN && f <= INT_MAX)
+				std::cout << "[int] " << static_cast<int>(f) << std::endl;
+		else
+				std::cout << "[int] impossible" << std::endl;
 		std::cout << "[float] " << f << "f" << std::endl;
+		std::cout << "[double] " << static_cast<double>(f) << std::endl;
+		return;
 	}
-	else
-		std::cout << "[float] is not displayable" << std::endl;
 
-	//double	d = static_cast <double> (atof_l(s.c_str()));
+	/*if double*/
 		if (isDouble(s))
 	{
-		char * end;
-		double	f = static_cast <double> (std::strtod(s.c_str(), &end));
-		std::cout << "[double] " << f << std::endl;
+		std::cout << "double literal" << std::endl;
+    double d = std::strtod(s.c_str(), &end);
+    if (*end == '\0') // Successful conversion
+    {
+			if (d >= CHAR_MIN && d <= CHAR_MAX && std::isprint(static_cast<char>(d)))
+					std::cout << "[char] '" << static_cast<char>(d) << "'" << std::endl;
+			else
+					std::cout << "[char] is not displayable" << std::endl;
+			if (d >= INT_MIN && d <= INT_MAX)
+					std::cout << "[int] " << static_cast<int>(d) << std::endl;
+			else
+					std::cout << "[int] impossible" << std::endl;
+			std::cout << "[float] " << static_cast<float>(d) << "f" << std::endl;
+			std::cout << "[double] " << d << std::endl;
+		}
+		else
+			std::cout << "Unsuccessful conversion" << std::endl;
+		return;
 	}
-	else
-		std::cout << "[double] is not displayable" << std::endl;
+	std::cout << "This string can not be converted :c" << std::endl;
 }
 
 /*
