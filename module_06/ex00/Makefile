@@ -6,12 +6,12 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 21:08:35 by atyurina          #+#    #+#              #
-#    Updated: 2024/10/08 14:02:22 by atyurina         ###   ########.fr        #
+#    Updated: 2024/10/10 22:34:26 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := built
-SRC := main.cpp ScalarConverter.cpp
+NAME := convert
+SRC := main.cpp ScalarConverter.cpp Utils.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

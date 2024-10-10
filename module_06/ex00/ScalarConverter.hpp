@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 21:10:24 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/08 14:01:36 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/10 22:48:55 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+#include <cctype>
+#include <limits>
+#include <cfloat>
+#include <cmath>
+#include "Utils.hpp"
 
 class ScalarConverter
 {
