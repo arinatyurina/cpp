@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 21:10:24 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/10 22:48:55 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/11 16:45:25 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ private:
 	~ScalarConverter();
 	ScalarConverter(const ScalarConverter& other);
 	virtual ScalarConverter& operator=(const ScalarConverter& other) = 0;
+	/*ScalarConverter becomes an abstract base class that cannot be instantiated directly.*/
 public:
 	static void	convert(std::string s);
 };
