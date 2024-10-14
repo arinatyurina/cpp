@@ -6,11 +6,11 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 21:08:35 by atyurina          #+#    #+#              #
-#    Updated: 2024/10/11 17:40:33 by atyurina         ###   ########.fr        #
+#    Updated: 2024/10/14 16:02:12 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := convert
+NAME := built
 SRC := main.cpp Serializer.cpp 
 
 OBJ := $(SRC:.cpp=.o)
