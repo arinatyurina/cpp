@@ -11,7 +11,8 @@ Welcome to the C++ Modules repository! This collection of projects is part of my
 6. [Module 05 - Repetition and Exceptions](#module-05---repetition-and-exceptions)
 7. [Module 06 - Type Casting](#module-06---type-casting)
 8. [Module 07 - Templates](#module-07---templates)
-9. [Module 08 - Containers](#module-08---containers)
+9. [Module 08 - Templated containers, iterators, algorithms](#module-08---templated-containers,-iterators,-algorithms)
+10. [Module 09 - STL](#module-09---STL)
 
 ---
 
@@ -67,6 +68,36 @@ I've learnt how to manage errors effectively using exceptions:
 
 - Exception handling: how to use try, catch, and throw to handle errors gracefully in programs.
 - Custom exceptions: created custom exceptions to handle specific error scenarios in a more descriptive way, extending the std::exception class.
+
+---
+
+## Module 06 - Type Casting
+This module covers the different types of casts in C++ and when to use each of them:
+
+- Static Cast: Converting between related types, like pointers or references of base and derived classes.
+- Dynamic Cast: Safe casting between pointers or references in polymorphic class hierarchies.
+- Const Cast: Adding or removing the const qualifier from a variable.
+- Reinterpret Cast: Low-level cast that converts between any pointer types.
+
+---
+
+## Module 07 - Templates
+This module introduces the concept of templates in C++ and how they enable generic programming:
+
+- Function Templates: Writing functions that can work with any data type, making code reusable and flexible.
+- Class Templates: Defining classes that can operate with any data type.
+- Specialization: Providing specific behavior for certain data types in templates.
+- This module emphasized how templates are a powerful feature of C++ that allows for type-independent programming and code reusability.
+
+---
+
+## Module 08 - Templated containers, iterators, algorithms
+
+
+---
+
+## Module 09 - STL
+
 
 ---
 
