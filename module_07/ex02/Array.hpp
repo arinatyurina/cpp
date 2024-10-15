@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 21:01:37 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/15 00:38:11 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:43:58 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ template <typename T>
 Array<T>::Array(unsigned int n) : num(n)
 {
 	elements = new T[num];
+	for (unsigned int i = 0; i < num; i++)
+		elements[i] = 0;
 }
 
 template <typename T>
@@ -53,10 +55,12 @@ Array<T>::~Array()
 }
 
 template <typename T>
-Array<T>::Array(const Array& other) : num(other->num), elements(new T[num])
+Array<T>::Array(const Array& other)
 {
-	for (int i = 0; i < num; i++)
-		elements[i] = other->elements[i];
+	num = other.num;
+	elements = new T[num];
+	for (unsigned int i = 0; i < num; i++)
+		elements[i] = other.elements[i];
 }
 
 template <typename T>
@@ -71,14 +75,14 @@ T& Array<T>::operator[](unsigned int idx)
 template <typename T>
 Array<T>& Array<T>::operator=(const Array& other)
 {
-	if (this != other)
+	if (this != &other)
 	{
-		num = other->num;
+		num = other.num;
 		elements = new T[num];
-		for (int i = 0; i < num; i++)
-			elements[i] = other->elements[i];
+		for (unsigned int i = 0; i < num; i++)
+			elements[i] = other.elements[i];
 	}
-	return (this);
+	return (*this);
 }
 
 template <typename T>
