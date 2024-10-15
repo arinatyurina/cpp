@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 21:01:37 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/15 18:43:58 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/15 22:45:44 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ Array<T>& Array<T>::operator=(const Array& other)
 {
 	if (this != &other)
 	{
+		delete [] elements;
 		num = other.num;
 		elements = new T[num];
 		for (unsigned int i = 0; i < num; i++)
