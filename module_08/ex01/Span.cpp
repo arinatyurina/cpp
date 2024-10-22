@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:09:47 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/21 16:55:17 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/22 14:57:53 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	Span::addNumber(int n)
 
 void	Span::addNumber(std::vector<int> vec)
 {
-	if (arr.size() + vec.size() < N)
+	if (arr.size() + vec.size() <= N)
 		arr.insert(arr.end(), vec.begin(), vec.end());
 	else
 		throw std::runtime_error("Span can not add that many numbers. There is no enought space.");
