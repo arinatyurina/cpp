@@ -6,13 +6,11 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:48:49 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/23 22:21:56 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/23 23:57:15 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <iostream>
-#include <fstream>
 
 void	outputInfo(std::ifstream &ifs)
 {
@@ -40,5 +38,6 @@ int main(int argc, char** argv)
 		return (EXIT_FAILURE);
 	}
 
+	
 	outputInfo(ifs);
 }
