@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:47:54 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/23 23:57:13 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/25 16:45:33 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &other)
 	bool	isValidValue(std::string value);
 	void	displayRate(date date, float price);
 
-bool	BitcoinExchange::makeDatabase(std::string filename)
+bool	BitcoinExchange::createDatabase(std::string filename)
 {
 	std::ifstream	ifs(filename.c_str());
 	std::string	line;
@@ -40,8 +40,36 @@ bool	BitcoinExchange::makeDatabase(std::string filename)
 	if (!ifs.is_open())
 	{
 		std::cerr << "Error: Could not open database." << std::endl;
-		return (EXIT_FAILURE);
+		return (false);
 	}
-	
-	
+
+	while (std::getline(ifs, line))
+	{
+		date	date;
+		size_t position = line.find(',');
+		if (position == std::string::npos) //not found
+		{
+			std::cerr << "Error: Invalid format in database." << std::endl;
+			std::cerr << "Line:" <<  line << std::endl;
+			return (false);
+		}
+		std::string date_str = line.substr(0, position);
+		std::string rate_str = line.substr(position + 1);
+
+		if (!date.setDate(date_str));
+			return(false);
+
+		float rate;
+		try 
+		{
+			rate = std::stof(rate_str);
+		}
+		catch (...)
+		{
+			std::cerr << "Error: Invalid rate format." << std::endl;
+			std::cerr << "Line: " << line << std::endl;
+			return false;
+		}
+		
+	}
 }

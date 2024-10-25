@@ -6,19 +6,19 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:48:49 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/23 23:57:15 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/25 15:32:21 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void	outputInfo(std::ifstream &ifs)
+void	outputInfo(std::ifstream &ifs, BitcoinExchange &BitExchange)
 {
 	std::string line;
 
 	while (std::getline(ifs, line))
 	{
-			std::cout << line << std::endl;
+		std::cout << line << std::endl;
 	}
 }
 
@@ -38,6 +38,8 @@ int main(int argc, char** argv)
 		return (EXIT_FAILURE);
 	}
 
-	
-	outputInfo(ifs);
+	BitcoinExchange	BitExchange;
+	BitExchange.createDatabase("data.csv");
+
+	outputInfo(ifs, BitExchange);
 }

@@ -74,6 +74,9 @@
 			"locale": "cpp",
 			"mutex": "cpp",
 			"stack": "cpp",
-			"filesystem": "cpp"
+			"list": "cpp",
+			"filesystem": "cpp",
+			"map": "cpp",
+			"__tree": "cpp"
 		}
 }
