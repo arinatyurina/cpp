@@ -6,21 +6,21 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:48:49 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/25 15:32:21 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:30:44 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void	outputInfo(std::ifstream &ifs, BitcoinExchange &BitExchange)
-{
-	std::string line;
+// void	outputInfo(std::ifstream &ifs, BitcoinExchange &BitExchange)
+// {
+// 	std::string line;
 
-	while (std::getline(ifs, line))
-	{
-		std::cout << line << std::endl;
-	}
-}
+// 	while (std::getline(ifs, line))
+// 	{
+// 		std::cout << line << std::endl;
+// 	}
+// }
 
 int main(int argc, char** argv)
 {
@@ -39,7 +39,12 @@ int main(int argc, char** argv)
 	}
 
 	BitcoinExchange	BitExchange;
-	BitExchange.createDatabase("data.csv");
+	if (!BitExchange.createDatabase("data.csv"))
+	{
+		std::cerr << "Error: Could not create database." << std::endl;
+		return (EXIT_FAILURE);
+	}
 
-	outputInfo(ifs, BitExchange);
+	BitExchange.printDatabase();
+	//outputInfo(ifs, BitExchange);
 }

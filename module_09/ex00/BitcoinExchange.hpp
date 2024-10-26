@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:48:03 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/25 16:45:22 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:30:22 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <utility> //pair
 
 struct date
 {
@@ -51,7 +52,7 @@ struct date
 		// Check for YYYY-MM-DD format
 		if (date_str[4] != '-' || date_str[7] != '-')
 			return false;
-		for (int i = 0; i < date_str.size(); ++i) 
+		for (unsigned long i = 0; i < date_str.size(); ++i) 
 		{
 			if (i == 4 || i == 7)
 				continue;
@@ -99,7 +100,6 @@ struct date
 class BitcoinExchange
 {
 private:
-	std::map<date, float>	database;
 
 	bool	isValidDate(std::string date);
 	bool	isInRangeDate(date);
@@ -113,7 +113,9 @@ public:
 	BitcoinExchange(const BitcoinExchange &other);
 	BitcoinExchange& operator=(const BitcoinExchange &other);
 
+	std::map<date, float>	database;
 	bool	createDatabase(std::string filename);
+	void	printDatabase(void);
 };
 
 #endif

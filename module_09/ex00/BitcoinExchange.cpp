@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:47:54 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/25 16:45:33 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/27 00:32:12 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,10 @@ bool	BitcoinExchange::createDatabase(std::string filename)
 		return (false);
 	}
 
+	std::getline(ifs, line); //header
 	while (std::getline(ifs, line))
 	{
-		date	date;
+		date	_date;
 		size_t position = line.find(',');
 		if (position == std::string::npos) //not found
 		{
@@ -56,9 +57,11 @@ bool	BitcoinExchange::createDatabase(std::string filename)
 		std::string date_str = line.substr(0, position);
 		std::string rate_str = line.substr(position + 1);
 
-		if (!date.setDate(date_str));
+		if (!_date.setDate(date_str))
+		{
+			std::cerr << "Error: Could not set date:" << date_str <<std::endl;
 			return(false);
-
+		}
 		float rate;
 		try 
 		{
@@ -68,8 +71,21 @@ bool	BitcoinExchange::createDatabase(std::string filename)
 		{
 			std::cerr << "Error: Invalid rate format." << std::endl;
 			std::cerr << "Line: " << line << std::endl;
-			return false;
+			return (false);
 		}
-		
+		std::pair<date, float>	 new_pair(_date, rate);
+		database.insert(new_pair);
+	}
+	return (true);
+}
+
+void	BitcoinExchange::printDatabase(void)
+{
+		for (std::map<date, float>::iterator it = database.begin(); it != database.end(); ++it)
+	{
+		const date& d = it->first;
+		float rate = it->second;
+		std::cout << "Date: " << d.year << "-" << d.month << "-" << d.day
+							<< " Rate: " << rate << std::endl;
 	}
 }
