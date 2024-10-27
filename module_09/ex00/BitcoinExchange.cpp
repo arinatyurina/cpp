@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:47:54 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/27 00:32:12 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/27 20:52:52 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,11 @@ void	BitcoinExchange::printDatabase(void)
 		std::cout << "Date: " << d.year << "-" << d.month << "-" << d.day
 							<< " Rate: " << rate << std::endl;
 	}
+}
+
+bool	BitcoinExchange::isInRangeDate(date _date)
+{
+	if (database.find(_date) != database.end())
+		return (true);
+	return (false);
 }
