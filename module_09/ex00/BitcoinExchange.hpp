@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:48:03 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/27 21:12:02 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/10/29 15:21:25 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ struct date
 
 	void	outputDate()
 	{
-		std::cout << year << "-" << month << "-" << day;
+		std::cout << year << "-";
+		if (month >= 1 && month <= 9)
+			std::cout << "0";
+		std::cout << month << "-";
+		if (day >= 1 && day <= 9)
+			std::cout << "0";
+		std::cout << day;
 	}
 
 	bool operator<(const date& other) const
@@ -104,13 +110,6 @@ struct date
 
 class BitcoinExchange
 {
-private:
-
-	bool	isValidDate(std::string date);
-
-	bool	isValidValue(std::string value);
-	void	displayRate(date date, float price);
-
 public:
 	BitcoinExchange();
 	~BitcoinExchange();
