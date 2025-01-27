@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:07:27 by atyurina          #+#    #+#             */
-/*   Updated: 2024/09/30 15:01:54 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/27 13:33:32 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main()
 {
 	try
 	{
-			Bureaucrat	Mary("Mary", 30);
+		Bureaucrat	Mary("Mary", 30);
 		Form	rent("rent", 35, 25);
 		Form	buy("buy", 25, 15);
 		/*Instatiation with an invalide grade*/

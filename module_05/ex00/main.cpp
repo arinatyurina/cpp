@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 13:07:27 by atyurina          #+#    #+#             */
-/*   Updated: 2024/09/30 14:57:22 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/27 12:58:27 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ int	main()
 	{
 		std::cerr << "Exception: " << e.what() << '\n';
 	}
-	Bureaucrat	Alice("Alice", 150);
+	//Bureaucrat	Alice("Alice", 150);
 	try
 	{
+		Bureaucrat	Alice("Alice", 150);
 		Alice.incrementGrade();
 		std::cout << Alice;
 		Alice.decrementGrade();

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:40:52 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/14 16:09:38 by atyurina         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:37:34 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,19 @@ void	identify(Base &p)
 		std::cout << "A has been identified" << std::endl;
 		(void)a;
 	}
-	catch (const std::bad_cast &e){}
+	catch (const std::exception){}
 	try
 	{
  		B &b = (dynamic_cast <B&> (p));
 		std::cout << "B has been identified" << std::endl;
 		(void)b;
 	}
-	catch (const std::bad_cast &e){}
+	catch (const std::exception){}
 	try
 	{
 		C &c = (dynamic_cast <C&> (p));
 		std::cout << "C has been identified" << std::endl;
 		(void)c;
 	}
-	catch (const std::bad_cast &e){}
+	catch (const std::exception){}
 }
