@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 21:10:24 by atyurina          #+#    #+#             */
-/*   Updated: 2025/01/28 13:05:39 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:10:33 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ public:
 #endif
 
 /*
-Static member functions are class-level functions that are not tied to any instance.
-They can access only static members of the class.
-Useful for operations that are not specific to an object but relevant to the class as a whole, 
-providing a way to encapsulate behavior at the class level rather than the instance level.
+A static_cast in C++ is a type of cast used to convert between types at compile time. 
+It is one of the most common and straightforward types of casting available in C++. 
+It is used when you know that the conversion between types is safe and valid, 
+and you want the compiler to perform the conversion for you.
 */

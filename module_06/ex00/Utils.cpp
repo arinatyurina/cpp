@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 22:31:05 by atyurina          #+#    #+#             */
-/*   Updated: 2025/01/28 14:08:53 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:22:25 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ bool	isInt(std::string s)
 	return (false);
 }
 
+/*
++inff: This represents positive infinity as a float value.
+-inff: This represents negative infinity as a float value.
+nan: This is a constant representing Not a Number in double-precision (double).
+nanf: This is a constant representing Not a Number in single-precision (float).
+*/
 bool isSpecialLiteral(std::string s)
 {
 	return (s == "nan" || s == "nanf" || s == "+inf" || s == "-inf" ||

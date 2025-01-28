@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 22:39:47 by atyurina          #+#    #+#             */
-/*   Updated: 2025/01/28 15:01:41 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:15:38 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,4 +141,12 @@ to safely cast it to a pointer of type Type*.
 This cast is done at compile time.
 It will only perform the cast if the types are related.
 If the types are not related, you will get a compiler error.
+*/
+
+/*
+A literal in programming refers to a fixed value used directly in code, 
+typically representing a constant of a specific type. 
+These values are written literally in the source code, 
+and the compiler interprets them as corresponding values of a specific data type.
+C++ provides several types of literals, categorized based on the data types they represent.
 */
