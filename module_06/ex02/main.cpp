@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:40:41 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/14 16:01:51 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:36:30 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ int	main()
 {
 	Base *ptr = generate();
 	identify(ptr);
-	identify(&(*ptr));
+	identify(*ptr);
 	delete ptr;
 }

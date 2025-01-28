@@ -6,12 +6,17 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 21:10:24 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/11 16:45:25 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:05:39 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
+
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
+#define CHAR_MIN -128
+#define CHAR_MAX 127
 
 #include <string>
 #include <iostream>

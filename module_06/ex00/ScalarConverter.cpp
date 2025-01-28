@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 22:39:47 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/11 00:04:03 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:01:41 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ScalarConverter::convert(std::string s)
 	if (isInt(s))
 	{
 		std::cout << "int literal" << std::endl;
-		int num =  static_cast<int>(std::atol(s.c_str()));
+		int num =  static_cast<int>(atoi(s.c_str()));
 		if (num < INT_MIN || num > INT_MAX || !isNumberInRange(s, INT_MIN, INT_MAX))
 		{
 			std::cout << "[char] impossible" << std::endl;
@@ -79,13 +79,13 @@ void	ScalarConverter::convert(std::string s)
 	if (isFloat(s))
 	{
 		std::cout << "float literal" << std::endl;
-		int num =  static_cast<int>(std::atol(s.c_str()));
+		int num =  static_cast<int>(atol(s.c_str()));
 		float	f = static_cast <float> (atof(s.c_str()));
 				if (num >= CHAR_MIN && num <= CHAR_MAX && std::isprint(static_cast<char>(num)))
 				std::cout << "[char] '" << static_cast<char>(num) << "'" << std::endl;
 		else
 				std::cout << "[char] is not displayable" << std::endl;
-		if (f >= INT_MIN && f <= INT_MAX)
+		if (f >= static_cast<float>(INT_MIN) && f <= static_cast<float>(INT_MAX))
 				std::cout << "[int] " << static_cast<int>(f) << std::endl;
 		else
 				std::cout << "[int] impossible" << std::endl;
@@ -98,7 +98,7 @@ void	ScalarConverter::convert(std::string s)
 		if (isDouble(s))
 	{
 		std::cout << "double literal" << std::endl;
-		double d = std::strtod(s.c_str(), &end);
+		double d = strtod(s.c_str(), &end);
 		if (*end == '\0') // Successful conversion
 		{
 			if (std::fabs(d) > DBL_MAX || std::log10(std::fabs(d)) > 15) 
@@ -135,4 +135,10 @@ Casting Operators in C++:
 The static_cast operator is the most commonly used casting operator in C++. 
 It performs compile-time type conversion and is mainly used 
 for explicit conversions that are considered safe by the compiler. 
+
+This takes the pointer in ptr and tries 
+to safely cast it to a pointer of type Type*. 
+This cast is done at compile time.
+It will only perform the cast if the types are related.
+If the types are not related, you will get a compiler error.
 */

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 22:31:05 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/10 23:35:09 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/28 14:08:53 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 bool	isDouble(std::string s)
 {
 	char* end;
-	std::strtod(s.c_str(), &end);
+	strtod(s.c_str(), &end);
 	if (*end == '\0')
 		return (true);
 	return (false);
@@ -24,7 +24,7 @@ bool	isDouble(std::string s)
 
 bool	isFloat(std::string s)
 {
-	if (s.back() == 'f' && isDouble(s.substr(0, s.size() - 1)))
+	if (!s.empty() && s[s.size() - 1] == 'f' && isDouble(s.substr(0, s.size() - 1)))
 		return (true);
 	return (false);
 }
@@ -32,7 +32,7 @@ bool	isFloat(std::string s)
 bool	isInt(std::string s)
 {
 	char *end;
-	std::strtol(s.c_str(), &end, 10);
+	strtol(s.c_str(), &end, 10);
 	if (*end == '\0')
 		return (true);
 	return (false);
@@ -62,6 +62,6 @@ void	handleSpecialLiteral(std:: string s)
 
 bool isNumberInRange(const std::string &s, long min, long max)
 {
-	long value = std::atol(s.c_str());
+	long value = atol(s.c_str());
 	return (value >= min && value <= max);
 }
