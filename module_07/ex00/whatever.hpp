@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 19:53:15 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/14 20:19:37 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:11:59 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 #define WHATEVER_HPP
 
 #include <iostream>
+
+// The template <typename T> allows it to work with any data type 
+// (int, float, double, std::string, etc.).
+
+// Ternaty operator (?:)
+//condition ? expression_if_true : expression_if_false;
 
 template <typename T>
 T const & max(T const &a, T const &b)

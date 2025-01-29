@@ -6,12 +6,18 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 21:01:37 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/15 22:45:44 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:50:35 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
+
+#define RESET	"\033[0m"  // Reset to default color
+#define RED		"\033[31m" // Red text
+#define GREEN	"\033[32m" // Green text
+#define YELLOW	"\033[33m" // Yellow text
+#define BLUE	"\033[34m" // Blue text
 
 #include <iostream>
 #include <exception>
