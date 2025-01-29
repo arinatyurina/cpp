@@ -6,7 +6,7 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 21:08:35 by atyurina          #+#    #+#              #
-#    Updated: 2025/01/28 13:46:43 by atyurina         ###   ########.fr        #
+#    Updated: 2025/01/29 13:02:39 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC := main.cpp Serializer.cpp
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror #-std=c++98 #-g
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-g
 
 all: $(NAME)
 

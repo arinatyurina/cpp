@@ -6,16 +6,17 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:13:42 by atyurina          #+#    #+#             */
-/*   Updated: 2025/01/28 13:46:52 by atyurina         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:03:14 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
-#include <cstdint>
 #include <string>
 #include <iostream>
+
+typedef unsigned long uintptr_t;
 
 struct Data
 {
