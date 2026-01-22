@@ -39,5 +39,11 @@ int main()
 	std::cout << sp2.shortestSpan() << std::endl;
 	std::cout << sp2.longestSpan() << std::endl;
 
+	Span sp3 = Span(10042);
+	for (int i = 0, i < 1042, i++)
+		sp3.addNumber(i);
+	std::cout << sp3.shortestSpan() << std::endl;
+	std::cout << sp3.longestSpan() << std::endl;
+
 	return (0);
 }
