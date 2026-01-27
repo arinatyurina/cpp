@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:47:54 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/27 20:52:52 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/01/27 19:13:20 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ bool	BitcoinExchange::createDatabase(std::string filename)
 		float rate;
 		try 
 		{
-			rate = std::stof(rate_str);
+			rate = std::atof(rate_str.c_str());
 		}
 		catch (...)
 		{

@@ -6,18 +6,35 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:48:49 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/29 16:04:23 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/01/27 21:13:51 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+#include <sstream>
+
+bool	isValidNumber(const std::string& val_str, float& val)
+{
+	std::stringstream ss(val_str);
+	ss >> val;
+
+	if (ss.fail())
+		return false;
+
+
+	char c;
+	if (ss >> c)
+		return false;
+
+	return true;
+}
 
 bool	isValidValue(std::string val_str)
 {
 	float	val;
 	try 
 	{
-		val = std::stof(val_str);
+		val = std::atof(val_str.c_str());
 	}
 	catch (...)
 	{
@@ -65,6 +82,11 @@ void	outputInfo(std::ifstream &ifs, BitcoinExchange BitExchange)
 			std::cerr << "Error: bad input => " << line << std::endl;
 			continue;
 		}
+		else if (position == 0)
+		{
+			std::cerr << "Error: bad input => " << line << std::endl;
+			continue;
+		}
 		std::string date_str = line.substr(0, position - 1);
 		std::string val_str = line.substr(position + 2);
 
@@ -77,7 +99,12 @@ void	outputInfo(std::ifstream &ifs, BitcoinExchange BitExchange)
 
 		if (!isValidValue(val_str))
 			continue;
-		float val = std::stof(val_str);
+		float val = std::atof(val_str.c_str());
+		if (!isValidNumber(val_str, val))
+		{
+			std::cerr << "Error: bad value => " << val_str << std::endl;
+			continue;;
+		}
 		date	closest_date = findClosestDate(_date, BitExchange);
 		_date.outputDate();
 		float rate = BitExchange.database[closest_date];
