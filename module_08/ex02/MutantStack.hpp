@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:05:01 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/22 15:57:29 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:40:32 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ MutantStack<T, Container>::MutantStack(const MutantStack &other) : std::stack<T,
 template <class T, class Container>
 MutantStack<T, Container>& MutantStack<T, Container>::operator=(const MutantStack &other)
 {
-	if (this != *other)
+	if (this != &other)
 		std::stack<T, Container>::operator=(other); // calling the assignment operator from the base class
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:09:47 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/22 14:57:53 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/01/19 21:47:12 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void	Span::addNumber(int n)
 		throw std::runtime_error("Span is already full. You can not add any more elements.");
 }
 
-void	Span::addNumber(std::vector<int> vec)
+void	Span::addNumber(std::vector<int> vec) //adding multiple numbers to Span in a single call
 {
 	if (arr.size() + vec.size() <= N)
-		arr.insert(arr.end(), vec.begin(), vec.end());
+		arr.insert(arr.end(), vec.begin(), vec.end()); //using a range of iterators
 	else
 		throw std::runtime_error("Span can not add that many numbers. There is no enought space.");
 }

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:48:03 by atyurina          #+#    #+#             */
-/*   Updated: 2024/10/29 15:21:25 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/01/27 19:11:30 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <iostream>
 #include <fstream>
 #include <utility> //pair
+#include <cstdlib>
 
 struct date
 {
@@ -82,9 +83,9 @@ struct date
 		size_t pos2 = date_str.find('-', pos1 + 1);
 		try
 		{
-				year = std::stoi(date_str.substr(0, pos1));
-				month = std::stoi(date_str.substr(pos1 + 1, pos2 - pos1 - 1));
-				day = std::stoi(date_str.substr(pos2 + 1));
+				year = std::atoi(date_str.substr(0, pos1).c_str());
+				month = std::atoi(date_str.substr(pos1 + 1, pos2 - pos1 - 1).c_str());
+				day = std::atoi(date_str.substr(pos2 + 1).c_str());
 		}
 		catch (...)
 		{
