@@ -6,11 +6,11 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 21:08:35 by atyurina          #+#    #+#              #
-#    Updated: 2024/11/06 15:17:44 by atyurina         ###   ########.fr        #
+#    Updated: 2026/03/04 19:36:38 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME := RPN
+NAME := PmergeMe
 SRC := main.cpp PmergeMe.cpp
 
 OBJ := $(SRC:.cpp=.o)

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:36:13 by atyurina          #+#    #+#             */
-/*   Updated: 2024/11/06 15:37:57 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/03/04 20:40:05 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
+#include <deque>
+#include <string>
+#include <set>
+#include <algorithm>
+#include <limits>
+#include <cstdlib>
 
 class PmergeMe
 {
@@ -26,10 +33,11 @@ public:
 	PmergeMe(const PmergeMe &other);
 	PmergeMe& operator=(const PmergeMe &other);
 	
-	std::stack<int>	nums;
+	std::vector<int>	numsVector;
+	std::deque<int>	numsDeque;
 
-	bool	executeOperation(char token);
-	bool	performPmergeMe(std::string str);
+	std::vector<int>	executeOperationVector();
+	bool	executeOperationDeque();
 };
 
 #endif
