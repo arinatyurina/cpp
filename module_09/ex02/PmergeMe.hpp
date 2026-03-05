@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:36:13 by atyurina          #+#    #+#             */
-/*   Updated: 2026/03/04 20:40:05 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/03/05 18:42:32 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
 	std::deque<int>	numsDeque;
 
 	std::vector<int>	executeOperationVector();
-	bool	executeOperationDeque();
+	std::deque<int>	executeOperationDeque();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:36:06 by atyurina          #+#    #+#             */
-/*   Updated: 2026/03/04 20:58:47 by atyurina         ###   ########.fr       */
+/*   Updated: 2026/03/05 19:22:04 by atyurina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,10 @@
 #include    <sstream>
 #include    <cctype>
 
-// int executePmergeMe(PmergeMe &pmergeMe)
-// {
-//     clock_t startVector = clock();
-// 	pmergeMe.executeOperationVector();
-// 	clock_t endVector = clock();
-// 	double timeTakenVectorUs = static_cast<double>(endVector - startVector) * 1e6 / CLOCKS_PER_SEC;
-// 	std::cout << "Time to process a range of " << pmergeMe.numsVector.size() << " elements with std::vector: " << timeTakenVectorUs << "us" << std::endl;
-
-// 	clock_t startDeque = clock();
-// 	if (!pmergeMe.executeOperationDeque())
-// 	{
-// 		std::cout << "Error: Failed to execute operation on deque." << std::endl;
-// 		return (1);
-// 	}
-// 	clock_t endDeque = clock();
-// 	double timeTakenDequeUs = static_cast<double>(endDeque - startDeque) * 1e6 / CLOCKS_PER_SEC;
-// 	std::cout << "Time to process a range of " << pmergeMe.numsDeque.size() << " elements with std::deque: " << timeTakenDequeUs << "us" << std::endl;
-
-//     return (0);
-// }
+double getTimeUs(clock_t start, clock_t end)
+{
+	return (double)(end - start) * 1000000.0 / CLOCKS_PER_SEC;
+}
 
 int	main(int argc, char **argv)
 {
@@ -82,7 +66,7 @@ int	main(int argc, char **argv)
 		}
 		seen.insert(num);
 		pmergeMe.numsVector.push_back(num);
-		//pmergeMe.numsDeque.push_back(num);
+		pmergeMe.numsDeque.push_back(num);
 	}
 
 	if (pmergeMe.numsVector.size() < 2)
@@ -91,22 +75,44 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 
+
 	//output unsorted vector
-	std::cout << "Unsorted vector: ";
+	std::cout << "Before: ";
 	for (size_t i = 0; i < pmergeMe.numsVector.size(); ++i)
 	{
 		std::cout << pmergeMe.numsVector[i] << " ";
+		if (i > 9)
+		{
+			std::cout << "...";
+			break;
+		}
 	}
 	std::cout << std::endl;
-
+	
+	clock_t startVector = clock();
 	std::vector<int> sortedVector = pmergeMe.executeOperationVector();
+	clock_t endVector = clock();
+	
 	// output sorted vector
-	std::cout << "Sorted vector: ";
+	std::cout << "After: ";
 	for (size_t i = 0; i < sortedVector.size(); ++i)
 	{
 		std::cout << sortedVector[i] << " ";
+		if (i > 9)
+		{
+			std::cout << "...";
+			break;
+		}
 	}
 	std::cout << std::endl;
+	double timeTakenVectorUs = getTimeUs(startVector, endVector);
+	std::cout << "Time to process a range of " << pmergeMe.numsVector.size() << " elements with std::vector: " << timeTakenVectorUs << "us" << std::endl;
+	
+	clock_t startDeque = clock();
+	std::deque<int> sortedDeque = pmergeMe.executeOperationDeque();
+	clock_t endDeque = clock();
 
+	double timeTakenDequeUs = getTimeUs(startDeque, endDeque);
+	std::cout << "Time to process a range of " << pmergeMe.numsDeque.size() << " elements with std::deque: " << timeTakenDequeUs << "us" << std::endl;
 	return (0);
 }

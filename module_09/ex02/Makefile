@@ -6,7 +6,7 @@
 #    By: atyurina <atyurina@student.42london.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 21:08:35 by atyurina          #+#    #+#              #
-#    Updated: 2026/03/04 19:36:38 by atyurina         ###   ########.fr        #
+#    Updated: 2026/03/05 19:21:14 by atyurina         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC := main.cpp PmergeMe.cpp
 OBJ := $(SRC:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -std=c++98 -Wall -Wextra -Werror  -g
 
 all: $(NAME)
 
